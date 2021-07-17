@@ -4,20 +4,13 @@ const app = express()
 const port = process.env.PORT || 3000
 const cors = require('cors')
 
-//app.use(cors())
-app.use(function(req, res, next) {
-    res.setHeader(
-      "Access-Control-Allow-Headers",
-      "X-Requested-With,content-type"
-    );
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-      "Access-Control-Allow-Methods",
-      "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-    );
-    res.setHeader("Access-Control-Allow-Credentials", true);
-    next();
-});
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+    methods: "GET, PUT, POST"
+}
+
+app.use(cors(corsOptions));
 app.use(express.json())
 
 app.get('/', (req, res) => {
