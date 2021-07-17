@@ -4,12 +4,7 @@ const app = express()
 const port = process.env.PORT || 3000
 const cors = require('cors');
 
-app.use(cors({
-    origin: [
-        'https://mentoro-rental-motorcycle-front-end.vercel.app',
-        'http://localhost:3000'
-    ]
-}));
+app.use(cors());
 
 app.use(express.json())
 
