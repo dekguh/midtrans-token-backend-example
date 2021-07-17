@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.send('Mars perut bunyi')
 })
 
-app.post('/generate-trx-token', (req, res) => {
+app.post('/generate-trx-token', cors(), (req, res) => {
     let snap = new midtransClient.Snap({
         isProduction: false, // test mode
         serverKey: 'SB-Mid-server-_U-WFJExvm0FQNgdTACTifVB', // sandbox test key
