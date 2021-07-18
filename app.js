@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
 app.post('/generate-trx-token', (req, res) => {
     let snap = new midtransClient.Snap({
         isProduction: false, // test mode
-        serverKey: '-', // sandbox test key
-        clientKey: '-', // sandbox test key
+        serverKey: 'SB-Mid-server-_U-WFJExvm0FQNgdTACTifVB', // sandbox test key
+        clientKey: 'SB-Mid-client-HQRi-2dR1jtg0jC8', // sandbox test key
     })
 
     const parameterSnap = {
